@@ -1,4 +1,4 @@
 rdfdict
 =======
 
-A python class for a nested dictionaries representation of quads and triples
+A python class for a nested dictionaries representation of RDF quads and triples
