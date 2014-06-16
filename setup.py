@@ -6,7 +6,7 @@ with open('README.md') as f:
 from setuptools import setup
 setup(
     name = "RDFdict",
-    version = "0.1.1",
+    version = "0.1.3",
     py_modules = ['rdfdict'],
 
     # metadata for upload to PyPI
