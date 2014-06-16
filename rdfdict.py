@@ -1,7 +1,4 @@
-__author__ = 'matt'
-
-import logging
-logger = logging.getLogger()
+__author__ = 'Matt Clark'
 
 
 class RDFdict(object):
