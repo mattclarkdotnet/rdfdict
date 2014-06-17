@@ -56,9 +56,9 @@ test_triples = list(((s, p, o) for (s, p, o, g) in quads if g == 'graph1'))
 triplegraph = quadgraphs['graph1']
 
 
-class TestRDFJson(unittest.TestCase):
+class TestRDFdict(unittest.TestCase):
     def test_quads(self):
-        for (graphname, triples_as_dict) in RDFdict(quads=quads).graphs:
+        for (graphname, triples_as_dict) in RDFdict(quads=quads).graphs():
             test_dict = json.loads(quadgraphs[graphname])
             self.assertTrue(compare_dicts(test_dict, triples_as_dict))
 
@@ -89,12 +89,12 @@ class TestRDFJson(unittest.TestCase):
 
     def test_default_graph_in_graphs(self):
         r = RDFdict(triples=test_triples)
-        for (name, graph) in r.graphs:
+        for (name, graph) in r.graphs():
             self.assertEqual(name, 'DEFAULT')
 
     def test_default_graph_in_graphs_when_named(self):
         r = RDFdict(triples=test_triples, default_graph='foo')
-        for (name, graph) in r.graphs:
+        for (name, graph) in r.graphs():
             self.assertEqual(name, 'foo')
 
 
